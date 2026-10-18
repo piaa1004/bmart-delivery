@@ -1,0 +1,308 @@
+{
+  "schema_version": "1.0",
+  "date": "2026-10-18",
+  "scope": "공통 PPC 업무 로직의 제공 수치 기반 계산. 물리 배치 승인 아님.",
+  "baseline": {
+    "area_pyeong": "463",
+    "sku_total": 10900,
+    "households": 75275,
+    "known_zones_pyeong": {
+      "상온": "65",
+      "냉장": "100",
+      "냉동": "109",
+      "입고검수": "22",
+      "입고창고": "55",
+      "패킹": "24",
+      "공용통로": "55"
+    },
+    "unclassified_remainder_pyeong": "33"
+  },
+  "fixed_rack": {
+    "width_mm": 1250,
+    "depth_mm": 450,
+    "height_mm": 2100,
+    "shelves": 6,
+    "shelf_load_limit_kg": 150,
+    "aisle_mm": 700
+  },
+  "rounding": {
+    "method": "ROUND_HALF_UP",
+    "zone_decimal_places": 2,
+    "area_correction_target": "배분 미확인 잔여",
+    "sku_distribution": "largest remainder; ties: 상온, 냉장, 냉동"
+  },
+  "conditional_parameters": {
+    "units_per_order": {
+      "candidate": 8,
+      "status": "NEEDS_SOURCE"
+    },
+    "outbound_temperature_weights": {
+      "candidate": [
+        ".5",
+        ".3",
+        ".2"
+      ],
+      "status": "NEEDS_SOURCE"
+    }
+  },
+  "missing_inputs": [
+    "목포 원본 MD·이미지",
+    "33평 용도",
+    "온도별 랙 수·배열",
+    "상품 부피·중량·슬롯·적재율",
+    "박스 입수·팔레트·입고 주기",
+    "생산성·운영시간·교대·패킹대 규격"
+  ],
+  "branches": [
+    {
+      "branch": "동래점",
+      "area_pyeong": "624.9",
+      "households": 182360,
+      "area_multiplier": "1.349676025917926565874730021598272138229",
+      "zone_areas_pyeong": {
+        "상온": "87.73",
+        "냉장": "134.97",
+        "냉동": "147.11",
+        "입고검수": "29.69",
+        "입고창고": "74.23",
+        "패킹": "32.39",
+        "공용통로": "74.23",
+        "배분 미확인 잔여": "44.55"
+      },
+      "rounding_adjustment_pyeong": "0.01",
+      "sku_total": 14711,
+      "sku_by_temperature": {
+        "상온": 7356,
+        "냉장": 4413,
+        "냉동": 2942
+      },
+      "demand": {
+        "보수": {
+          "monthly_orders": "5470.800",
+          "daily_orders": "182.360",
+          "monthly_revenue_krw": "164124000.000"
+        },
+        "기준": {
+          "monthly_orders": "14588.80",
+          "daily_orders": "486.2933333333333333333333333333333333333",
+          "monthly_revenue_krw": "437664000.00"
+        },
+        "낙관": {
+          "monthly_orders": "31913.000",
+          "daily_orders": "1063.766666666666666666666666666666666667",
+          "monthly_revenue_krw": "957390000.000"
+        }
+      },
+      "demand_intensity_vs_mokpo": "1.794937312852819652738592940729035410195",
+      "rack_count": null,
+      "storage_units": null,
+      "daily_outbound_units": null,
+      "inbound_units": null,
+      "required_staff": null,
+      "packing_stations": null,
+      "max_daily_orders": null,
+      "capacity_status": "UNKNOWN",
+      "physical_design_status": "NEEDS_SOURCE"
+    },
+    {
+      "branch": "해운대점",
+      "area_pyeong": "550",
+      "households": 82010,
+      "area_multiplier": "1.187904967602591792656587473002159827214",
+      "zone_areas_pyeong": {
+        "상온": "77.21",
+        "냉장": "118.79",
+        "냉동": "129.48",
+        "입고검수": "26.13",
+        "입고창고": "65.33",
+        "패킹": "28.51",
+        "공용통로": "65.33",
+        "배분 미확인 잔여": "39.22"
+      },
+      "rounding_adjustment_pyeong": "0.02",
+      "sku_total": 12948,
+      "sku_by_temperature": {
+        "상온": 6474,
+        "냉장": 3884,
+        "냉동": 2590
+      },
+      "demand": {
+        "보수": {
+          "monthly_orders": "2460.300",
+          "daily_orders": "82.010",
+          "monthly_revenue_krw": "73809000.000"
+        },
+        "기준": {
+          "monthly_orders": "6560.80",
+          "daily_orders": "218.6933333333333333333333333333333333333",
+          "monthly_revenue_krw": "196824000.00"
+        },
+        "낙관": {
+          "monthly_orders": "14351.750",
+          "daily_orders": "478.3916666666666666666666666666666666667",
+          "monthly_revenue_krw": "430552500.000"
+        }
+      },
+      "demand_intensity_vs_mokpo": "0.9171372845022795205458772380060988496725",
+      "rack_count": null,
+      "storage_units": null,
+      "daily_outbound_units": null,
+      "inbound_units": null,
+      "required_staff": null,
+      "packing_stations": null,
+      "max_daily_orders": null,
+      "capacity_status": "UNKNOWN",
+      "physical_design_status": "NEEDS_SOURCE"
+    },
+    {
+      "branch": "사하점",
+      "area_pyeong": "217.6",
+      "households": 129427,
+      "area_multiplier": "0.4699784017278617710583153347732181425486",
+      "zone_areas_pyeong": {
+        "상온": "30.55",
+        "냉장": "47.00",
+        "냉동": "51.23",
+        "입고검수": "10.34",
+        "입고창고": "25.85",
+        "패킹": "11.28",
+        "공용통로": "25.85",
+        "배분 미확인 잔여": "15.50"
+      },
+      "rounding_adjustment_pyeong": "-0.01",
+      "sku_total": 5123,
+      "sku_by_temperature": {
+        "상온": 2561,
+        "냉장": 1537,
+        "냉동": 1025
+      },
+      "demand": {
+        "보수": {
+          "monthly_orders": "3882.810",
+          "daily_orders": "129.427",
+          "monthly_revenue_krw": "116484300.000"
+        },
+        "기준": {
+          "monthly_orders": "10354.16",
+          "daily_orders": "345.1386666666666666666666666666666666667",
+          "monthly_revenue_krw": "310624800.00"
+        },
+        "낙관": {
+          "monthly_orders": "22649.725",
+          "daily_orders": "754.9908333333333333333333333333333333333",
+          "monthly_revenue_krw": "679491750.000"
+        }
+      },
+      "demand_intensity_vs_mokpo": "3.658442390157657217652919686639185730751",
+      "rack_count": null,
+      "storage_units": null,
+      "daily_outbound_units": null,
+      "inbound_units": null,
+      "required_staff": null,
+      "packing_stations": null,
+      "max_daily_orders": null,
+      "capacity_status": "UNKNOWN",
+      "physical_design_status": "NEEDS_SOURCE"
+    },
+    {
+      "branch": "남구점",
+      "area_pyeong": "403.7",
+      "households": 139763,
+      "area_multiplier": "0.8719222462203023758099352051835853131749",
+      "zone_areas_pyeong": {
+        "상온": "56.67",
+        "냉장": "87.19",
+        "냉동": "95.04",
+        "입고검수": "19.18",
+        "입고창고": "47.96",
+        "패킹": "20.93",
+        "공용통로": "47.96",
+        "배분 미확인 잔여": "28.77"
+      },
+      "rounding_adjustment_pyeong": "0.00",
+      "sku_total": 9504,
+      "sku_by_temperature": {
+        "상온": 4752,
+        "냉장": 2851,
+        "냉동": 1901
+      },
+      "demand": {
+        "보수": {
+          "monthly_orders": "4192.890",
+          "daily_orders": "139.763",
+          "monthly_revenue_krw": "125786700.000"
+        },
+        "기준": {
+          "monthly_orders": "11181.04",
+          "daily_orders": "372.7013333333333333333333333333333333333",
+          "monthly_revenue_krw": "335431200.00"
+        },
+        "낙관": {
+          "monthly_orders": "24458.525",
+          "daily_orders": "815.2841666666666666666666666666666666667",
+          "monthly_revenue_krw": "733755750.000"
+        }
+      },
+      "demand_intensity_vs_mokpo": "2.129431585466451267324903230307302750126",
+      "rack_count": null,
+      "storage_units": null,
+      "daily_outbound_units": null,
+      "inbound_units": null,
+      "required_staff": null,
+      "packing_stations": null,
+      "max_daily_orders": null,
+      "capacity_status": "UNKNOWN",
+      "physical_design_status": "NEEDS_SOURCE"
+    },
+    {
+      "branch": "부산진구점",
+      "area_pyeong": "332",
+      "households": 205889,
+      "area_multiplier": "0.7170626349892008639308855291576673866091",
+      "zone_areas_pyeong": {
+        "상온": "46.61",
+        "냉장": "71.71",
+        "냉동": "78.16",
+        "입고검수": "15.78",
+        "입고창고": "39.44",
+        "패킹": "17.21",
+        "공용통로": "39.44",
+        "배분 미확인 잔여": "23.65"
+      },
+      "rounding_adjustment_pyeong": "-0.01",
+      "sku_total": 7816,
+      "sku_by_temperature": {
+        "상온": 3908,
+        "냉장": 2345,
+        "냉동": 1563
+      },
+      "demand": {
+        "보수": {
+          "monthly_orders": "6176.670",
+          "daily_orders": "205.889",
+          "monthly_revenue_krw": "185300100.000"
+        },
+        "기준": {
+          "monthly_orders": "16471.12",
+          "daily_orders": "549.0373333333333333333333333333333333333",
+          "monthly_revenue_krw": "494133600.00"
+        },
+        "낙관": {
+          "monthly_orders": "36030.575",
+          "daily_orders": "1201.019166666666666666666666666666666667",
+          "monthly_revenue_krw": "1080917250.000"
+        }
+      },
+      "demand_intensity_vs_mokpo": "3.814391688307531020795236742386350449957",
+      "rack_count": null,
+      "storage_units": null,
+      "daily_outbound_units": null,
+      "inbound_units": null,
+      "required_staff": null,
+      "packing_stations": null,
+      "max_daily_orders": null,
+      "capacity_status": "UNKNOWN",
+      "physical_design_status": "NEEDS_SOURCE"
+    }
+  ]
+}
